@@ -1,6 +1,5 @@
 package Day_5;
 
-import java.util.Iterator;
 import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
@@ -52,11 +51,15 @@ public class GreaterThanNegative1Zero0Negative1 implements Comparable<GreaterTha
         Set<GreaterThanNegative1Zero0Negative1> treeSet = new TreeSet<GreaterThanNegative1Zero0Negative1>();
         GreaterThanNegative1Zero0Negative1 lightyearsOne = new GreaterThanNegative1Zero0Negative1("Voyager",14);
         GreaterThanNegative1Zero0Negative1 lightyearsTwo = new GreaterThanNegative1Zero0Negative1("Voyager",32);
-        GreaterThanNegative1Zero0Negative1 lightyearsThree = new GreaterThanNegative1Zero0Negative1("Voyager",34);
+        GreaterThanNegative1Zero0Negative1 lightyearsThree = new GreaterThanNegative1Zero0Negative1("Voyager",32);
         treeSet.add(lightyearsOne);
         treeSet.add(lightyearsTwo);
         treeSet.add(lightyearsThree);
- //I think he wants to be great
-        lightyearsOne.compareTo(lightyearsTwo);
+        System.out.println("Lightyear One comapred to Light Year Two");
+        System.out.println(lightyearsOne.compareTo(lightyearsTwo));
+        System.out.println("Lightyear Three comapred to Light Year Two");
+        System.out.println(lightyearsThree.compareTo(lightyearsTwo));
+        System.out.println("Lightyear Two compared to Lightyear One");
+        System.out.println(lightyearsTwo.compareTo(lightyearsOne));
     }
 }
