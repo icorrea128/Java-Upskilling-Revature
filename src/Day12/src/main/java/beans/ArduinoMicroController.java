@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Objects;
 
 @Entity
 public class ArduinoMicroController {
@@ -13,12 +14,14 @@ public class ArduinoMicroController {
     String microControllerTransducer;
     double microControllerVolts;
     double microControllerOhms;
+    float lux;
 
-    public ArduinoMicroController(long microControllerId, String microControllerTransducer, double microControllerVolts, double microControllerOhms) {
+    public ArduinoMicroController(long microControllerId, String microControllerTransducer, double microControllerVolts, double microControllerOhms, float lux) {
         this.microControllerId = microControllerId;
         this.microControllerTransducer = microControllerTransducer;
         this.microControllerVolts = microControllerVolts;
         this.microControllerOhms = microControllerOhms;
+        this.lux = lux;
     }
 
     public ArduinoMicroController() {
@@ -56,5 +59,16 @@ public class ArduinoMicroController {
         this.microControllerOhms = microControllerOhms;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ArduinoMicroController that = (ArduinoMicroController) o;
+        return microControllerId == that.microControllerId && Double.compare(that.microControllerVolts, microControllerVolts) == 0 && Double.compare(that.microControllerOhms, microControllerOhms) == 0 && Objects.equals(microControllerTransducer, that.microControllerTransducer);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(microControllerId, microControllerTransducer, microControllerVolts, microControllerOhms);
+    }
 }
