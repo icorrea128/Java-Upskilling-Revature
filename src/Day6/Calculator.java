@@ -1,13 +1,17 @@
 package Day6;
 
-import java.math.BigInteger;
-
 public interface Calculator<I extends Integer> {
-    I add(Integer intOne, Integer intTwo);
-
-    I subtract(Integer intOne, Integer intTwo);
-
-    I multiply(Integer intOne, Integer intTwo);
-
-    I divide(Integer intOne, Integer intTwo);
+//    I operation(int number1, int number2);
+//
+//    I operate(int a, int b, Calculator mathOperation);
+//
+//    I add(Integer intOne, Integer intTwo);
+//
+//    void add();
+//
+//    I subtract(Integer intOne, Integer intTwo);
+//
+//    I multiply(Integer intOne, Integer intTwo);
+//
+//    I divide(Integer intOne, Integer intTwo);
 }

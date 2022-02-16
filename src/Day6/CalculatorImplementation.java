@@ -1,24 +1,36 @@
 package Day6;
 
-public class CalculatorImplementation implements Calculator<Integer> {
+public class CalculatorImplementation {
 
-    @Override
-    public Integer add(Integer intOne, Integer intTwo){
-        return intOne + intTwo;
+
+    @FunctionalInterface
+    interface MathOperation {
+        int operation(int number1, int number2);
     }
 
-    @Override
-    public Integer subtract(Integer intOne, Integer intTwo){
-        return intOne - intTwo;
+    public int operate(int a, int b, MathOperation mathOperation) {
+        return mathOperation.operation(a, b);
     }
 
-    @Override
-    public Integer multiply(Integer intOne, Integer intTwo){
-        return intOne * intTwo;
+    public void add(){
+        MathOperation additionLambda = (number1,number2) -> number1 + number2;
+        System.out.println("49 + 1 = " + operate(49 , 1, additionLambda));
     }
 
-    @Override
-    public Integer divide(Integer intOne, Integer intTwo){
-        return intOne / intTwo;
+    public void subtraction(){
+        MathOperation subtractionLambda = (number1,number2) -> number1 - number2;
+        System.out.println("13 - 1 = " + operate(13 , 1, subtractionLambda));
     }
+
+    public void multiply(){
+        MathOperation multiplyLambda = (number1,number2) -> number1 * number2;
+        System.out.println("7 * 7 = " + operate(7 , 7, multiplyLambda));
+    }
+
+    public void division(){
+        MathOperation divisionLambda = (number1,number2) -> number1 / number2;
+        System.out.println("24 + 3 = " + operate(24 , 3, divisionLambda));
+    }
+
+
 }
