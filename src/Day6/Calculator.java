@@ -2,12 +2,12 @@ package Day6;
 
 import java.math.BigInteger;
 
-public interface Calculator {
-    Integer add(Integer intOne, Integer intTwo);
+public interface Calculator<I extends Integer> {
+    I add(Integer intOne, Integer intTwo);
 
-    Integer subtract(Integer intOne, Integer intTwo);
+    I subtract(Integer intOne, Integer intTwo);
 
-    Integer multiply(Integer intOne, Integer intTwo);
+    I multiply(Integer intOne, Integer intTwo);
 
-    Integer divide(Integer intOne, Integer intTwo);
+    I divide(Integer intOne, Integer intTwo);
 }

@@ -1,6 +1,6 @@
 package Day6;
 
-public class CalculatorImplementation implements Calculator {
+public class CalculatorImplementation implements Calculator<Integer> {
 
     @Override
     public Integer add(Integer intOne, Integer intTwo){
